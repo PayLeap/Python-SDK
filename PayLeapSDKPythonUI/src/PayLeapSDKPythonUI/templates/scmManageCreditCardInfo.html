@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Manage Credit Card Info{% endblock %}
+{% block page_title %}Manage Credit Card Info{% endblock %}
+{% block content %}
+	<form method="post" action="/scmManageCreditCardInfoRequest/">
+		<table cellpadding="5" cellspacing="5" style="width: 100%;">
+			<tr>	
+				<td colspan="4" style="text-align: center;">
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>											
+			</tr>	
+			
+			<tr>	
+				<td colspan="4">
+					&nbsp;
+				</td>											
+			</tr>			
+							
+			<tr>	
+				<td>
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="Add">Add</option>
+						<option value="Update">Update</option>
+						<option value="Delete">Delete</option>							
+					</select>
+				</td>
+				<td>
+					Vendor
+				</td>
+				<td>
+					<input type="text" id="vendor" name="vendor"/>
+				</td>
+			</tr>				
+			
+			<tr>	
+				<td>
+					Customer Key
+				</td>
+				<td>
+					<input type="text" id="customerKey" name="customerKey"/>
+				</td>
+				<td>
+					Check Info Key
+				</td>
+				<td>
+					<input type="text" id="cardInfoKey" name="cardInfoKey"/>
+				</td>			
+			</tr>				
+			
+			<tr>	
+				<td>
+					CC Account Num
+				</td>
+				<td>
+					<input type="text" id="ccAccountNum" name="ccAccountNum"/>
+				</td>
+				<td>
+					CC Exp Date
+				</td>
+				<td>
+					<input type="text" id="ccExpDate" name="ccExpDate"/>
+				</td>			
+			</tr>		
+			
+			<tr>	
+				<td>
+					CC Name On Card
+				</td>
+				<td>
+					<input type="text" id="ccNameonCard" name="ccNameonCard" />
+				</td>
+				<td>
+					CC Street
+				</td>
+				<td>
+					<input type="text" id="ccStreet" name="ccStreet" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					CC Zip
+				</td>
+				<td>
+					<input type="text" id="ccZip" name="ccZip" />
+				</td>					
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>
+							
+			</tr>
+			
+			<tr>	
+				<td colspan="4">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="4">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}Process Check{% endblock %}
+{% block page_title %}Process Check{% endblock %}
+{% block content %}
+	<form method="post" action="/transactionProcessCheckRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>				
+			<tr>
+				<td style="width: 50%;">
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="Sale">Sale</option>
+						<option value="Auth">Auth</option>
+						<option value="Return">Return</option>
+						<option value="Void">Void</option>
+						<option value="Force">Force</option>
+					</select>
+				</td>
+			</tr>
+			<tr>	
+				<td>
+					Check Num
+				</td>
+				<td>
+					<input type="text" id="checkNum" name="checkNum"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Transit Num
+				</td>
+				<td>
+					<input type="text" id="transitNum" name="transitNum"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Account Num
+				</td>
+				<td>
+					<input type="text" id="accountNum" name="accountNum"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					Inv Num
+				</td>
+				<td>
+					<input type="text" id="invNum" name="invNum"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					Amount
+				</td>
+				<td>
+					<input type="text" id="amount" name="amount" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					MICR
+				</td>
+				<td>
+					<input type="text" id="micr" name="micr" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Name On Check
+				</td>
+				<td>
+					<input type="text" id="nameOnCheck" name="nameOnCheck"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					DL
+				</td>
+				<td>
+					<input type="text" id="dl" name="dl"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					SSN
+				</td>
+				<td>
+					<input type="text" id="ss" name="ss"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					DOB
+				</td>
+				<td>
+					<input type="text" id="dob" name="dob"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					State Code
+				</td>
+				<td>
+					<input type="text" id="stateCode" name="stateCode" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Check Type
+				</td>
+				<td>
+					<input type="text" id="checkType" name="checkType"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					PNRef
+				</td>
+				<td>
+					<input type="text" id="pnref" name="pnref"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					MagData
+				</td>
+				<td>
+					<input type="text" id="magData" name="magData"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>			
+			</tr>			
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

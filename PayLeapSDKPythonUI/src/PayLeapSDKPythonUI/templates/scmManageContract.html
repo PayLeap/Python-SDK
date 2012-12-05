@@ -1,0 +1,376 @@
+{% extends "base.html" %}
+{% block title %}Manage Contract{% endblock %}
+{% block page_title %}Manage Contract{% endblock %}
+{% block content %}
+	<form method="post" action="/scmManageContractRequest/">
+		<table cellpadding="5" cellspacing="5" style="width: 100%;">
+			<tr>	
+				<td colspan="4" style="text-align: center;">
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>											
+			</tr>	
+			
+			<tr>	
+				<td colspan="4">
+					&nbsp;
+				</td>											
+			</tr>
+			
+			<tr>	
+				<td>
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="Add">Add</option>
+						<option value="Update">Update</option>
+						<option value="Delete">Delete</option>							
+					</select>
+				</td>
+				<td>
+					Vendor
+				</td>
+				<td>
+					<input type="text" id="vendor" name="vendor"/>
+				</td>
+			</tr>								
+			
+			<tr>	
+				<td>
+					Customer Key
+				</td>
+				<td>
+					<input type="text" id="customerKey" name="customerKey"/>
+				</td>
+				<td>
+					Contract Key
+				</td>
+				<td>
+					<input type="text" id="contractKey" name="contractKey"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Payment Info Key
+				</td>
+				<td>
+					<input type="text" id="paymentInfoKey" name="paymentInfoKey"/>
+				</td>
+				<td>
+					Payment Type
+				</td>
+				<td>
+					<select id="paymentType" name="paymentType" class="combo_width">
+						<option value="CC">CC</option>
+						<option value="CK">CK</option>
+					</select>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Customer ID
+				</td>
+				<td>
+					<input type="text" id="customerID" name="customerID"/>
+				</td>
+				<td>
+					First Name
+				</td>
+				<td>
+					<input type="text" id="firstName" name="firstName"/>
+				</td>			
+			</tr>		
+			
+			<tr>	
+				<td>
+					Last Name
+				</td>
+				<td>
+					<input type="text" id="lastName" name="lastName" />
+				</td>
+				<td>
+					Title
+				</td>
+				<td>
+					<input type="text" id="title" name="title" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Department
+				</td>
+				<td>
+					<input type="text" id="department" name="department" />
+				</td>
+				<td>
+					Street1
+				</td>
+				<td>
+					<input type="text" id="street1" name="street1" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Street2
+				</td>
+				<td>
+					<input type="text" id="street2" name="street2" />
+				</td>
+				<td>
+					Street3
+				</td>
+				<td>
+					<input type="text" id="street3" name="street3" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					City
+				</td>
+				<td>
+					<input type="text" id="city" name="city"/>
+				</td>
+				<td>
+					State ID
+				</td>
+				<td>
+					<input type="text" id="stateID" name="stateID"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Province
+				</td>
+				<td>
+					<input type="text" id="province" name="province"/>
+				</td>
+				<td>
+					Zip
+				</td>
+				<td>
+					<input type="text" id="zip" name="zip"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Country ID
+				</td>
+				<td>
+					<input type="text" id="countryID" name="countryID"/>
+				</td>
+				<td>
+					Email
+				</td>
+				<td>
+					<input type="text" id="email" name="email"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Day Phone
+				</td>
+				<td>
+					<input type="text" id="dayPhone" name="dayPhone"/>
+				</td>
+				<td>
+					Night Phone
+				</td>
+				<td>
+					<input type="text" id="nightPhone" name="nightPhone"/>
+				</td>			
+			</tr>
+			
+			
+			<tr>	
+				<td>
+					FAX
+				</td>
+				<td>
+					<input type="text" id="fax" name="fax"/>
+				</td>
+				<td>
+					Mobile
+				</td>
+				<td>
+					<input type="text" id="mobile" name="mobile" />
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>
+					Contract ID
+				</td>
+				<td>
+					<input type="text" id="contractID" name="contractID" />
+				</td>
+				<td>
+					Contract Name
+				</td>
+				<td>
+					<input type="text" id="contractName" name="contractName"/>
+				</td>
+			</tr>	
+			
+			<tr>
+				<td>
+					Bill Amt
+				</td>
+				<td>
+					<input type="text" id="billAmt" name="billAmt"/>
+				</td>	
+				<td>
+					Tax Amt
+				</td>
+				<td>
+					<input type="text" id="taxAmt" name="taxAmt"/>
+				</td>
+			</tr>	
+			
+			<tr>
+				<td>
+					Total Amt
+				</td>
+				
+				<td>
+					<input type="text" id="totalAmt" name="totalAmt"/>
+				</td>	
+				<td>
+					Start Date
+				</td>
+				<td>
+					<input type="text" id="startDate" name="startDate"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					End Date
+				</td>
+				<td>
+					<input type="text" id="endDate" name="endDate"/>
+				</td>
+				<td>
+					Next Bill Date
+				</td>
+				<td>
+					<input type="text" id="nextBillDt" name="nextBillDt"/>
+				</td>								
+			</tr>
+			
+			<tr>
+				<td>
+					Billing Period
+				</td>
+				<td>
+					<input type="text" id="billingPeriod" name="billingPeriod"/>
+				</td>
+				<td>
+					Billing Interval
+				</td>
+				<td>
+					<input type="text" id="billingInterval" name="billingInterval"/>
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>
+					Max Failures
+				</td>
+				<td>
+					<input type="text" id="maxFailures" name="maxFailures"/>
+				</td>
+				<td>
+					Failure Interval
+				</td>
+				<td>
+					<input type="text" id="failureInterval" name="failureInterval"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Email Customer
+				</td>
+				<td>
+					<input type="text" id="emailCustomer" name="emailCustomer"/>
+				</td>
+				<td>
+					Email Merchant
+				</td>
+				<td>
+					<input type="text" id="emailMerchant" name="emailMerchant"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Email Customer Failure
+				</td>
+				<td>
+					<input type="text" id="emailCustomerFailure" name="emailCustomerFailure"/>
+				</td>
+				<td>
+					Email Merchant Failure
+				</td>
+				<td>
+					<input type="text" id="emailMerchantFailure" name="emailMerchantFailure"/>
+				</td>			
+			</tr>				
+			
+			<tr>	
+				<td>
+					Status
+				</td>
+				<td>
+					<select id="status" name="status" class="combo_width">
+						<option value="">Select</option>
+						<option value="Active">Active</option>
+						<option value="Inactive">Inactive</option>							
+					</select>
+				</td>
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Customer Name
+				</td>
+				<td>
+					<input type="text" id="customerName" name="customerName"/>
+				</td>
+				<td colspan="2">
+					&nbsp;
+				</td>
+			</tr>		
+			
+			<tr>	
+				<td colspan="4">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="4">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

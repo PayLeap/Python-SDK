@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}Process Debit Card{% endblock %}
+{% block page_title %}Process Debit Card{% endblock %}
+{% block content %}
+	<form method="post" action="/transactionProcessDebitCardRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>				
+			<tr>
+				<td style="width: 50%;">
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="Sale">Sale</option>							
+						<option value="Return">Return</option>							
+					</select>
+				</td>
+			</tr>
+			<tr>	
+				<td>
+					Card Num
+				</td>
+				<td>
+					<input type="text" id="cardNum" name="cardNum"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Exp Date
+				</td>
+				<td>
+					<input type="text" id="expDate" name="expDate"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Mag Data
+				</td>
+				<td>
+					<input type="text" id="magData" name="magData"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Name On Card
+				</td>
+				<td>
+					<input type="text" id="nameOnCard" name="nameOnCard" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Amount
+				</td>
+				<td>
+					<input type="text" id="amount" name="amount" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Inv Number
+				</td>
+				<td>
+					<input type="text" id="invNum" name="invNum"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					PNRef
+				</td>
+				<td>
+					<input type="text" id="pnref" name="pnref"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Pin
+				</td>
+				<td>
+					<input type="text" id="pin" name="pin"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Sure Charge Amount
+				</td>
+				<td>
+					<input type="text" id="sureChargeAmt" name="sureChargeAmt"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Cash Back Amount
+				</td>
+				<td>
+					<input type="text" id="cashBackAmt" name="cashBackAmt"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Register Num
+				</td>
+				<td>
+					<input type="text" id="registerNum" name="registerNum" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>			
+			</tr>				
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

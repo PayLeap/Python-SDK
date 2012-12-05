@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% block title %}Get Card Transactions Summary{% endblock %}
+{% block page_title %}Get Card Transactions Summary{% endblock %}
+{% block content %}
+	<form method="post" action="/reportGetCardTrxSummaryRequest/">
+		<table cellpadding="5" cellspacing="5" style="width: 100%;">
+			<tr>	
+				<td colspan="4" style="text-align: center;">
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>											
+			</tr>	
+			
+			<tr>	
+				<td colspan="4">
+					&nbsp;
+				</td>											
+			</tr>
+			
+			<tr>	
+				<td>
+					RPNum
+				</td>
+				<td>
+					<input type="text" id="rpnum" name="rpnum"/>
+				</td>
+				<td>
+					Begin Date
+				</td>
+				<td>
+					<input type="text" id="beginDt" name="beginDt"/>
+				</td>
+			</tr>								
+			
+			<tr>	
+				<td>
+					End Date
+				</td>
+				<td>
+					<input type="text" id="endDt" name="endDt"/>
+				</td>	
+				<td>
+					Approval Code
+				</td>
+				<td>
+					<input type="text" id="approvalCode" name="approvalCode"/>
+				</td>		
+			</tr>
+			
+			<tr>					
+				<td>
+					register
+				</td>
+				<td>
+					<input type="text" id="register" name="register"/>
+				</td>
+				<td>
+					Name On Card
+				</td>
+				<td>
+					<input type="text" id="nameOnCard" name="nameOnCard" />
+				</td>			
+			</tr>			
+			
+			<tr>
+				<td>
+					Card Num
+				</td>
+				<td>
+					<input type="text" id="cardNum" name="cardNum"/>
+				</td>
+				<td>
+					Card Type
+				</td>
+				<td>
+					<input type="text" id="cardType" name="cardType"/>
+				</td>	
+			</tr>
+			
+			<tr>	
+				<td>
+					Exclude Void
+				</td>
+				<td>
+					<select id="excludeVoid" name="excludeVoid" class="combo_width">
+						<option value="">Select</option>
+						<option value="TRUE">TRUE</option>
+						<option value="FALSE">FALSE.</option>
+					</select>
+				</td>
+				<td>
+					User
+				</td>
+				<td>
+					<input type="text" id="user" name="user"/>
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>
+					Settle Flag
+				</td>
+				<td>
+					<select id="settleFlag" name="settleFlag" class="combo_width">
+						<option value="">Select</option>
+						<option value="TRUE">TRUE</option>
+						<option value="FALSE">FALSE.</option>							
+					</select>
+				</td>
+				<td>
+					Settle Msg
+				</td>
+				<td>
+					<input type="text" id="settleMsg" name="settleMsg"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Settle Date
+				</td>
+				<td>
+					<input type="text" id="settleDt" name="settleDt" />
+				</td>
+				<td>
+					extData
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>
+			</tr>
+							
+			<tr>	
+				<td colspan="4">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="4">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>					
+		</table>
+	</form>
+		{% if listFlag == 0 %}
+			<br/><b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+		{% elif listFlag == 1%}			
+				<br/><div style="height: 300px;width:100%;overflow:auto;" id="response_div">
+					<table border="1" id="response_tbl"  id="response_tbl">
+						<tr>	
+							<th>CardTrxSummary   </th>
+							<th>PaymentMethod    </th>
+							<th>Payment_Type_ID  </th>
+							<th>Sale             </th>
+							<th>Authorization    </th>
+							<th>PostAuth         </th>
+							<th>ReturnAmt        </th>
+							<th>Capture          </th>
+							<th>TotalAmt         </th>
+							<th>Sale_Cnt         </th>
+							<th>Authorization_Cnt</th>
+							<th>PostAuth_Cnt     </th>
+							<th>Return_Cnt       </th>
+							<th>Capture_Cnt      </th>
+							<th>Cnt              </th>						
+						</tr>
+							{% for cardSummaryTrxResponse in resMsg %}						 
+								<tr>	
+									<td>
+										{{cardSummaryTrxResponse.CardTrxSummary}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.PaymentMethod}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Payment_Type_ID}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Sale}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Authorization}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.PostAuth}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.ReturnAmt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Capture}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.TotalAmt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Sale_Cnt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Authorization_Cnt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.PostAuth_Cnt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Return_Cnt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Capture_Cnt}}
+									</td>
+									<td>
+										{{cardSummaryTrxResponse.Cnt}}
+									</td>
+								</tr>					
+							{% endfor %}						
+						</table>
+				</div>
+			{% endif %}		
+{% endblock %}

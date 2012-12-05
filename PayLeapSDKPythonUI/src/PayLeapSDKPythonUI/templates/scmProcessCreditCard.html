@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Process Credit Card - Recurring Billing{% endblock %}
+{% block page_title %}Process Credit Card - Recurring Billing{% endblock %}
+{% block content %}
+	<form method="post" action="/scmProcessCreditCardRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>			
+			
+			<tr>	
+				<td>
+					Vendor
+				</td>
+				<td>
+					<input type="text" id="vendor" name="vendor"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					CC Info Key
+				</td>
+				<td>
+					<input type="text" id="ccInfoKey" name="ccInfoKey"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Amount
+				</td>
+				<td>
+					<input type="text" id="amount" name="amount"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Inv Num
+				</td>
+				<td>
+					<input type="text" id="invNum" name="invNum" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

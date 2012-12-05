@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% block title %}Manage Check Info{% endblock %}
+{% block page_title %}Manage Check Info{% endblock %}
+{% block content %}
+	<form method="post" action="/scmManageCheckInfoRequest/">
+		<table cellpadding="5" cellspacing="5" style="width: 100%;">
+			<tr>	
+				<td colspan="4" style="text-align: center;">
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>											
+			</tr>	
+			
+			<tr>	
+				<td colspan="4">
+					&nbsp;
+				</td>											
+			</tr>			
+							
+			<tr>	
+				<td>
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="Add">Add</option>
+						<option value="Update">Update</option>
+						<option value="Delete">Delete</option>							
+					</select>
+				</td>
+				<td>
+					Vendor
+				</td>
+				<td>
+					<input type="text" id="vendor" name="vendor"/>
+				</td>
+			</tr>				
+			
+			<tr>	
+				<td>
+					Customer Key
+				</td>
+				<td>
+					<input type="text" id="customerKey" name="customerKey"/>
+				</td>
+				<td>
+					Check Info Key
+				</td>
+				<td>
+					<input type="text" id="checkInfoKey" name="checkInfoKey"/>
+				</td>			
+			</tr>	
+			
+			<tr>
+				<td>
+					Check Type
+				</td>
+				<td>
+					<select id="checkType" name="checkType" class="combo_width">
+						<option value="Personal">Personal</option>
+						<option value="Business">Business</option>							
+					</select>
+				</td>
+				
+				<td>
+					Account Type
+				</td>
+				<td>
+					<select id="accountType" name="accountType" class="combo_width">
+						<option value="Checking">Checking</option>
+						<option value="Savings">Savings</option>							
+					</select>
+				</td>
+			</tr>	
+			
+			<tr>	
+				<td>
+					Check Num
+				</td>
+				<td>
+					<input type="text" id="checkNum" name="checkNum" />
+				</td>
+				<td>
+					MICR
+				</td>
+				<td>
+					<input type="text" id="micr" name="micr" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Account Num
+				</td>
+				<td>
+					<input type="text" id="accountNum" name="accountNum" />
+				</td>
+				<td>
+					Transit Num
+				</td>
+				<td>
+					<input type="text" id="transitNum" name="transitNum" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					SSN
+				</td>
+				<td>
+					<input type="text" id="ss" name="ss" />
+				</td>
+				<td>
+					DOB
+				</td>
+				<td>
+					<input type="text" id="dob" name="dob" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Branch City
+				</td>
+				<td>
+					<input type="text" id="branchCity" name="branchCity"/>
+				</td>
+				<td>
+					DL
+				</td>
+				<td>
+					<input type="text" id="dl" name="dl"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					State Code
+				</td>
+				<td>
+					<input type="text" id="stateCode" name="stateCode"/>
+				</td>
+				<td>
+					Name On Check
+				</td>
+				<td>
+					<input type="text" id="nameOnCheck" name="nameOnCheck"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Email
+				</td>
+				<td>
+					<input type="text" id="email" name="email"/>
+				</td>
+				<td>
+					Day Phone
+				</td>
+				<td>
+					<input type="text" id="dayPhone" name="dayPhone"/>
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Street1
+				</td>
+				<td>
+					<input type="text" id="street1" name="street1" />
+				</td>
+				<td>
+					Street2
+				</td>
+				<td>
+					<input type="text" id="street2" name="street2" />
+				</td>			
+			</tr>
+			
+			<tr>	
+				<td>
+					Street3
+				</td>
+				<td>
+					<input type="text" id="street3" name="street3"/>
+				</td>
+				<td>
+					City
+				</td>
+				<td>
+					<input type="text" id="city" name="city"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					State ID
+				</td>
+				<td>
+					<input type="text" id="stateID" name="stateID"/>
+				</td>
+				<td>
+					Province
+				</td>
+				<td>
+					<input type="text" id="province" name="province"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					PostalCode
+				</td>
+				<td>
+					<input type="text" id="postalCode" name="postalCode"/>
+				</td>
+				<td>
+					Country ID
+				</td>
+				<td>
+					<input type="text" id="countryID" name="countryID"/>
+				</td>			
+			</tr>
+			
+			<tr>					
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>	
+				<td colspan="2">&nbsp;</td>		
+			</tr>		
+			
+			<tr>	
+				<td colspan="4">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="4">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

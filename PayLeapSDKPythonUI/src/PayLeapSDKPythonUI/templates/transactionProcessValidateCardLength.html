@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Process Validate Card Length{% endblock %}
+{% block page_title %}Process Validate Card Length{% endblock %}
+{% block content %}
+	<form method="post" action="/transactionProcessValidCardLengthRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>				
+			
+			<tr>	
+				<td>
+					Card Num
+				</td>
+				<td>
+					<input type="text" id="cardNum" name="cardNum"/>
+				</td>			
+			</tr>								
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>
+		</table>
+	</form>
+	{% if resMsg %}
+		<b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+	{% endif %}
+		
+{% endblock %}

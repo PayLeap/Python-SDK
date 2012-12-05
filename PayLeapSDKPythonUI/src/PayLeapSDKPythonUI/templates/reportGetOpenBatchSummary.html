@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Get Open Batch Summary{% endblock %}
+{% block page_title %}Get Open Batch Summary{% endblock %}
+{% block content %}
+	<form method="post" action="/reportGetOpenBatchSummaryRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>				
+			<tr>
+				<td style="width: 50%;">
+					RPNum
+				</td>
+				<td>
+					<input type="text" id="rpnum" name="rpnum"/>
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>
+					Begin Date
+				</td>
+				<td>
+					<input type="text" id="beginDt" name="beginDt"/>
+				</td>			
+			</tr>	
+			
+			<tr>	
+				<td>
+					End Date
+				</td>
+				<td>
+					<input type="text" id="endDt" name="endDt"/>
+				</td>			
+			</tr>			
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>					
+		</table>
+	</form>
+		{% if listFlag == 0 %}
+			<br/><b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+		{% elif listFlag == 1%}			
+				<br/><div style="height: 300px;width:100%;overflow:auto;" id="response_div">
+					<table border="1" id="response_tbl"  id="response_tbl">
+						<tr>	
+							<th>Payment_Type_ID  </th>
+							<th>Sale             </th>
+							<th>Authorization    </th>
+							<th>PostAuth         </th>
+							<th>ReturnAmt        </th>
+							<th>Inquire          </th>
+							<th>Capture          </th>
+							<th>Reload           </th>
+							<th>Activate         </th>
+							<th>Sale_Cnt         </th>
+							<th>Authorization_Cnt</th>
+							<th>PostAuth_Cnt     </th>
+							<th>Return_Cnt       </th>
+							<th>Capture_Cnt      </th>
+							<th>Inquire_Cnt      </th>
+							<th>Reload_Cnt       </th>
+							<th>Activate_Cnt     </th>
+						</tr>
+						{% for openBatchSummaryResponse in resMsg %}						 
+							<tr>	
+								<td>
+									{{openBatchSummaryResponse.Payment_Type_ID}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Sale}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Authorization}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.PostAuth}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Return}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Inquire}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Capture}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Reload}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Activate}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Sale_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Authorization_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.PostAuth_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Return_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Capture_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Inquire_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Reload_Cnt}}
+								</td>
+								<td>
+									{{openBatchSummaryResponse.Activate_Cnt}}
+								</td>
+							</tr>					
+						{% endfor %}						
+					</table>
+				</div>
+			{% endif %}		
+{% endblock %}

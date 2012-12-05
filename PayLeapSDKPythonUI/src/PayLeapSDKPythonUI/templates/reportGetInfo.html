@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Get Info{% endblock %}
+{% block page_title %}Get Info{% endblock %}
+{% block content %}
+	<form method="post" action="/reportGetInfoRequest/">
+		<table cellpadding="5" cellspacing="5">
+			<tr>	
+				<td colspan="2">
+					&nbsp;
+				</td>						
+			</tr>
+			<tr>
+				<td style="width: 50%;">
+					Server Mode
+				</td>
+				<td>
+					<select id="serverMode" name="serverMode" class="combo_width">
+						<option value="UAT">UAT</option>
+						<option value="PRODUCTION">PRODUCTION</option>							
+					</select>
+				</td>
+			</tr>				
+			<tr>
+				<td style="width: 50%;">
+					Transaction Type
+				</td>
+				<td>
+					<select id="transType" name="transType" class="combo_width">
+						<option value="BatchInquiry">BatchInquiry</option>
+						<option value="Setup">Setup</option>
+						<option value="StatusCheck">StatusCheck</option>
+						<option value="Initialize">Initialize</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>
+					Ext Data
+				</td>
+				<td>
+					<input type="text" id="extData" name="extData"/>
+				</td>			
+			</tr>				
+			
+			<tr>	
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>	
+				<td colspan="2">
+					<input type="submit" value="OK" class="submit"/>					
+				</td>						
+			</tr>					
+		</table>
+	</form>
+		{% if listFlag == 0 %}
+			<br/><b><span style="font-size: 16px;color: red;" >{{resMsg}}</span></b>
+		{% elif listFlag == 1%}			
+				<br/><div style="height: 300px;width:100%;overflow:auto;" id="response_div">
+					<table border="1" id="response_tbl"  id="response_tbl">
+						<tr>	
+							<th>ExtData         </th>
+							<th>Vendor          </th>
+							<th>MerchantID      </th>
+							<th>Phone1          </th>
+							<th>Phone2          </th>
+							<th>Auto_Close_Batch</th>
+							<th>CreditCard      </th>
+							<th>PaymentTypes    </th>
+							<th>CardType        </th>
+							<th>RespMSG         </th>
+							<th>Result          </th>
+						</tr>
+						{% for infoResponse in resMsg %}						 
+							<tr>	
+								<td>
+									{{infoResponse.ExtData}}
+								</td>
+								<td>
+									{{infoResponse.Vendor}}
+								</td>
+								<td>
+									{{infoResponse.MerchantID}}
+								</td>
+								<td>
+									{{infoResponse.Phone1}}
+								</td>
+								<td>
+									{{infoResponse.Phone2}}
+								</td>
+								<td>
+									{{infoResponse.Auto_Close_Batch}}
+								</td>
+								<td>
+									{{infoResponse.CreditCard}}
+								</td>
+								<td>
+									{{infoResponse.PaymentTypes}}
+								</td>
+								<td>
+									{{infoResponse.CardType}}
+								</td>
+								<td>
+									{{infoResponse.RespMSG}}
+								</td>
+								<td>
+									{{infoResponse.Result}}
+								</td>
+							</tr>					
+						{% endfor %}						
+					</table>
+				</div>
+			{% endif %}		
+{% endblock %}

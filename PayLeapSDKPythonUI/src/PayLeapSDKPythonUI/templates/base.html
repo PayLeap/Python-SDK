@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>PayLeap {% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="/site_media/styles/main.css" type="text/css" />
+	</head>
+	<body>
+		<div id="container">
+			<div id="banner">
+				<div class="logo"><a href="#">Payleap</a></div>
+				<ul>
+					{% if selectedHeader ==  "merchant"%}
+						<li><a href="/scmAddRecurringCreditCardPage/" class="current-page">Merchant</a></li>
+					{% else %}
+						<li><a href="/scmAddRecurringCreditCardPage/">Merchant</a></li>
+					{% endif %}
+					
+					{% if selectedHeader ==  "transaction"%}
+						<li><a href="/transactionProcessCreditCardPage/" class="current-page">Transaction</a></li>
+					{% else %}
+						<li><a href="/transactionProcessCreditCardPage/">Transaction</a></li>
+					{% endif %}
+					
+					{% if selectedHeader ==  "report"%}
+						<li><a href="/reportGetCardTrxPage/" class="current-page">Report</a></li>
+					{% else %}
+						<li><a href="/reportGetCardTrxPage/">Report</a></li>
+					{% endif %}
+				</ul>
+			</div>
+			
+			<!-- Left menu panel -->
+			
+			{% if selectedHeader ==  "merchant"%}
+				<div id="subnav">
+					<ul id="sidenav">
+						<li>Merchant</li>
+						{% if selectedSubMenu ==  "addrecurringCreditCard"%}
+							<li><a href="/scmAddRecurringCreditCardPage/" class="current-page">RecurringCreditCard</a></li>			
+						{% else %}
+							<li><a href="/scmAddRecurringCreditCardPage/">RecurringCreditCard</a></li>
+						{% endif %}
+								
+						{% if selectedSubMenu ==  "addRecurringCheck"%}
+							<li><a href="/scmAddRecurringCheckPage/" class="current-page">AddRecurringCheck</a></li>			
+						{% else %}
+							<li><a href="/scmAddRecurringCheckPage/">AddRecurringCheck</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "creditCardRecurringBilling"%}
+							<li><a href="/scmProcessCreditCardPage/" class="current-page">ProcessCreditCard</a></li>			
+						{% else %}
+							<li><a href="/scmProcessCreditCardPage/">ProcessCreditCard</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "checkRecurringBilling"%}
+							<li><a href="/scmProcessCheckPage/" class="current-page">ProcessCheck</a></li>			
+						{% else %}
+							<li><a href="/scmProcessCheckPage/">ProcessCheck</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "manageCheckInfo"%}
+							<li><a href="/scmManageCheckInfoPage/" class="current-page">ManageCheckInfo</a></li>			
+						{% else %}
+							<li><a href="/scmManageCheckInfoPage/">ManageCheckInfo</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "manageCreditInfo"%}
+							<li><a href="/scmManageCreditCardInfoPage/" class="current-page">ManageCreditInfo</a></li>			
+						{% else %}
+							<li><a href="/scmManageCreditCardInfoPage/">ManageCreditInfo</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "manageContract"%}
+							<li><a href="/scmManageContractPage/" class="current-page">ManageContract</a></li>			
+						{% else %}
+							<li><a href="/scmManageContractPage/">ManageContract</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "manageCustomer"%}
+							<li><a href="/scmManageCustomerPage/" class="current-page">ManageCustomer</a></li>			
+						{% else %}
+							<li><a href="/scmManageCustomerPage/">ManageCustomer</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			{% endif %}
+			
+			{% if selectedHeader ==  "transaction"%}			
+				<div id="subnav">
+					<ul id="sidenav">
+						<li>Transaction</li>
+						{% if selectedSubMenu ==  "transactionCard"%}
+							<li><a href="/transactionProcessCreditCardPage/" class="current-page">Credit</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessCreditCardPage/">Credit</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionDebit"%}
+							<li><a href="/transactionProcessDebitCardPage/" class="current-page">Debit</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessDebitCardPage/">Debit</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionCheck"%}
+							<li><a href="/transactionProcessCheckPage/"  class="current-page">Check</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessCheckPage/">Check</a></li>
+						{% endif %}
+						
+						
+						{% if selectedSubMenu ==  "transactionEBT"%}
+							<li><a href="/transactionProcessEBTCardPage/"  class="current-page">EBT</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessEBTCardPage/">EBT</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionGiftCard"%}
+							<li><a href="/transactionProcessGiftCardPage/"  class="current-page">GiftCard</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessGiftCardPage/">GiftCard</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionValidCard"%}
+							<li><a href="/transactionProcessValidateCardPage/"  class="current-page">ValidCard</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessValidateCardPage/">ValidCard</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionValidCardLength"%}
+							<li><a href="/transactionProcessValidCardLengthPage/"  class="current-page">ValidCardLength</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessValidCardLengthPage/">ValidCardLength</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionValidExpDate"%}
+							<li><a href="/transactionProcessValidExpDatePage/"  class="current-page">ValidExpDate</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessValidExpDatePage/">ValidExpDate</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "transactionValidMod10"%}
+							<li><a href="/transactionProcessValidMod10Page/"  class="current-page">ValidMod10</a></li>		
+						{% else %}
+							<li><a href="/transactionProcessValidMod10Page/">ValidMod10</a></li>
+						{% endif %}	
+								
+						{% if selectedSubMenu ==  "customTokenSample"%}
+							<li><a href="/customTokenSamplePage/" class="current-page">CustomTokenSample</a></li>		
+						{% else %}
+							<li><a href="/customTokenSamplePage/">CustomTokenSample</a></li>
+						{% endif %}		
+					</ul>
+				</div>
+			{% endif %}
+			
+			{% if selectedHeader ==  "report"%}
+				<div id="subnav">
+					<ul id="sidenav">
+						<li>Report</li>
+						{% if selectedSubMenu ==  "getCardTrx"%}
+							<li><a href="/reportGetCardTrxPage/"  class="current-page">GetCardTrx</a></li>		
+						{% else %}
+							<li><a href="/reportGetCardTrxPage/">GetCardTrx</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "getCardTrxSummery"%}
+							<li><a href="/reportGetCardTrxSummaryPage/"  class="current-page">GetCardTrxSummery</a></li>		
+						{% else %}
+							<li><a href="/reportGetCardTrxSummaryPage/">GetCardTrxSummery</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "getCheckTrx"%}
+							<li><a href="/reportGetCheckTrxPage/"  class="current-page">GetCheckTrx</a></li>		
+						{% else %}
+							<li><a href="/reportGetCheckTrxPage/">GetCheckTrx</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "getInfo"%}
+							<li><a href="/reportGetInfoPage/"  class="current-page">GetInfo</a></li>		
+						{% else %}
+							<li><a href="/reportGetInfoPage/">GetInfo</a></li>
+						{% endif %}
+						
+						{% if selectedSubMenu ==  "getOpenBatchSummery"%}
+							<li><a href="/reportGetOpenBatchSummaryPage/"  class="current-page">GetOpenBatchSummery</a></li>		
+						{% else %}
+							<li><a href="/reportGetOpenBatchSummaryPage/">GetOpenBatchSummery</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			{% endif %}
+			
+			<div id="content">
+				<h1>{% block page_title %}{% endblock %}</h1>		
+				{% block content %}{% endblock %}	
+			</div>
+			<!-- content div ends here -->
+			<div class="clearfix"></div>
+		</div>
+		<!-- container div ends here -->
+		<div id="footer">
+			<div class="footer-container">
+			<p>&copy; 2012 PayLeap. All Rights Reserved. </p>
+			<div class="clearfix"></div>
+		</div>
+	</body>
+</html>

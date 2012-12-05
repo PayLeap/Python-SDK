@@ -1,0 +1,169 @@
+.. |br| raw:: html
+
+	<br/>
+
+Welcome to PayLeapSDK's documentation!
+**************************************
+
+Contents: This document will help you to explore PayLeapSDK
+
+1. Transaction
+##############
+
+**The PayLeap Transaction API allows you to submit payment transactions to your processor over the Internet using PayLeaps payment gateway. The PayLeap Transaction API supports the following transaction types:** |br| 
+
+* **ProcessCreditCard** 
+* **ProcessCheck** 
+* **ProcessDebitCard** 
+* **ProcessEBTCard** 
+* **ProcessGiftCard** 
+* **Card Validation Services**
+* **Custom Token Sample**
+
+
+1.1 ProcessCreditCard
+=====================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionProcessCreditCard
+    :members:	
+	
+1.2 ProcessCheck
+================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionProcessCheck
+    :members:	
+	
+1.3 ProcessDebitCard
+====================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionProcessDebitCard
+    :members:
+	
+1.4 ProcessEBTCard
+==================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionProcessEBTCard
+    :members:	
+
+1.5 ProcessGiftCard
+===================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionProcessGiftCard
+    :members:
+	
+1.6 Card Validation Services
+============================
+
+.. automodule:: com.payleap.serviceproviders.transaction.TransactionCardValidation
+    :members:
+	
+1.7 Custom Token Sample
+========================
+
+This example consist of two services one from transaction(ProcessCreditCard Service) and one from merchant(ProcessCreditCard Service).
+Here we are passing extData to transaction service once the request is completed successfully we are getting token number from the same 
+request and passing it to Merchant service.
+
+2. Merchant
+###########
+
+**The PayLeap Merchant API allows you to submit payment transactions to your processor over the Internet using PayLeaps payment gateway.The PayLeap Merchant API supports the following services:** |br| 
+
+* **AddRecurringCreditCard:** Adds a customer, contract, and credit card payment method in one call
+* **AddRecurringCheck:** Adds a customer, contract, and credit card payment method in one call
+* **ProcessCreditCard:** Processes credit card transactions within the recurring billing module
+* **ProcessCheck:** Processes check transactions within the recurring billing module
+* **ManageCheckInfo:** Adds, updates, and deletes check payment information
+* **ManageCreditCardInfo:** Adds, updates, and deletes credit card payment information
+* **ManageContract:** Adds, updates, and deletes contract information
+* **ManageCustomer:** Adds, updates, and deletes customer information
+
+2.1 AddRecurringCreditCard
+==========================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantAddRecurringCreditCard
+    :members:
+	
+2.2 AddRecurringCheck
+=====================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantAddRecurringCheck
+    :members:
+	
+2.3 ProcessCreditCard
+=====================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantProcessCreditCard
+    :members:
+	
+2.4 ProcessCheck
+================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantProcessCheck
+    :members:
+	
+2.5 ManageCheckInfo
+===================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantManageCheckInfo
+    :members:
+	
+2.6 ManageCreditCardInfo
+========================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantManageCreditCardInfo
+    :members:
+
+2.7 ManageContract
+==================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantManageContract
+    :members:
+	
+2.8 ManageCustomer
+==================
+
+.. automodule:: com.payleap.serviceproviders.merchant.MerchantManageCustomer
+    :members:
+
+3. Report
+#########
+
+**The PayLeap Reporting API allows you to run reports over the Internet using PayLeaps reporting gateway. The PayLeap Reporting API supports the following services:** |br| 
+
+* **GetCardTrx:** Retrieves card transaction details for a merchant
+* **GetCardTrxSummary:** Retrieves card transaction summary for a merchant
+* **GetCheckTrx:** Retrieves check transaction details for a merchant
+* **GetInfo:** Retrieves information from the web service
+* **GetOpenBatchSummary:** Retrieves payment type transaction summary of the current open batch for a merchant
+
+
+3.1 GetCardTrx
+==============
+
+.. automodule:: com.payleap.serviceproviders.report.ReportGetCardTrx
+    :members:
+	
+3.2 GetCardTrxSummary
+=====================
+
+.. automodule:: com.payleap.serviceproviders.report.ReportGetCardTrxSummary
+    :members:
+	
+3.3 GetCheckTrx
+===============
+
+.. automodule:: com.payleap.serviceproviders.report.ReportGetCheckTrx
+    :members:
+	
+3.4 GetInfo
+===========
+
+.. automodule:: com.payleap.serviceproviders.report.ReportGetInfo
+    :members:
+	
+3.5 GetOpenBatchSummary
+=======================
+
+.. automodule:: com.payleap.serviceproviders.report.ReportGetOpenBatchSummary
+    :members:
