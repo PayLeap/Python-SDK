@@ -1,5 +1,5 @@
 --- TransactServices ---
-POST http://private-b1d2-transactservices1.apiary.io
+POST "https://uat.payleap.com/transactservices.svc/ProcessCreditCard
 > Content-Type: text/xml
 { "UserName":"API UserName", "Password":"TransactionKey", "TransType":"Sale", "NameOnCard":"John Doe","CardNum":"4111111111111111", "ExpDate":"1215", "CVNum":"123", "Street":"123 street", "City":"Seattle", "State":"WA", "Zip":"98498", "InvNum":"abc123", "PNRef":"", "MagData":"", "ExtData":"": }
 < 201
